@@ -4,7 +4,7 @@
     "name": "BearHero 应用源",
     "author": "BearHero520",
     "homepage": "https://github.com/BearHero520/FnDepot",
-    "description": "面向飞牛 fnOS 的 UGREEN 工具箱与反向代理应用。"
+    "description": "面向飞牛 fnOS 的 UGREEN 工具箱、反向代理与 MiAir Plus 应用。"
   },
   "apps": {
     "App.Native.UGreenLED": {
@@ -70,6 +70,40 @@
               "download_url": "https://github.com/BearHero520/fnos-reverse-proxy/releases/download/v1.0.16/reverse-proxy.fpk",
               "sha256": "d4cacffc6102d4498a37e64fe6f392445318e319a1e9a7205bcb8bb06db7e86c",
               "size": 98027575
+            }
+          }
+        }
+      }
+    },
+    "miair-plus": {
+      "display_name": "MiAir Plus",
+      "desc": "【预览版】小爱音箱 DLNA / AirPlay 音乐投送与自定义音乐闹钟。支持音乐上传、NAS 选曲、工作日与节假日规则，内置 FFmpeg，x86_64 / ARM64 通用。AirPlay 2 为预览功能。",
+      "platform": [
+        "all"
+      ],
+      "categories": [
+        "影音娱乐",
+        "智能智控"
+      ],
+      "icon_url": "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/icons/miair-plus.png",
+      "readme_url": "https://raw.githubusercontent.com/BearHero520/miair-plus/v2.0.0-alpha.7/README.md",
+      "bug_report_url": "https://github.com/BearHero520/miair-plus/issues",
+      "maintainer": "BearHero520",
+      "maintainer_url": "https://github.com/BearHero520/miair-plus",
+      "run_as": "root",
+      "install_type": "",
+      "is_docker": false,
+      "service_port": "8310",
+      "releases": {
+        "2.0.0-alpha.7": {
+          "changelog": "新增关于页面；优化闹钟时间选择、PC/手机弹窗尺寸，修复设置页滚动条引起的布局抖动。",
+          "updated_at": "2026-09-10T16:07:44Z",
+          "os_min_version": "",
+          "packages": {
+            "all": {
+              "download_url": "https://github.com/BearHero520/miair-plus/releases/download/v2.0.0-alpha.7/miair-plus-2.0.0-alpha.7-all.fpk",
+              "sha256": "35533564ebccb029d22014caecba75eb8547cedbcf6924fcb6dba01d41103538",
+              "size": 25021898
             }
           }
         }

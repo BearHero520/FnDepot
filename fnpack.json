@@ -77,7 +77,7 @@
     },
     "miair-plus": {
       "display_name": "MiAir Plus",
-      "desc": "【预览版】小爱音箱 DLNA / AirPlay 音乐投送与自定义音乐闹钟。支持音乐上传、NAS 选曲、工作日与节假日规则，内置 FFmpeg，x86_64 / ARM64 通用。AirPlay 2 为预览功能。",
+      "desc": "小爱音箱 DLNA / AirPlay 音乐投送与自定义音乐闹钟。支持音乐上传、NAS 选曲、工作日与节假日规则，内置 FFmpeg，x86_64 / ARM64 通用。AirPlay 2 为预览功能。",
       "platform": [
         "all"
       ],
@@ -86,7 +86,7 @@
         "智能智控"
       ],
       "icon_url": "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/icons/miair-plus.png",
-      "readme_url": "https://raw.githubusercontent.com/BearHero520/miair-plus/v2.0.0-alpha.7/README.md",
+      "readme_url": "https://raw.githubusercontent.com/BearHero520/FnDepot/main/apps/miair-plus/README.md",
       "bug_report_url": "https://github.com/BearHero520/miair-plus/issues",
       "maintainer": "BearHero520",
       "maintainer_url": "https://github.com/BearHero520/miair-plus",
@@ -95,15 +95,15 @@
       "is_docker": false,
       "service_port": "8310",
       "releases": {
-        "2.0.0-alpha.7": {
-          "changelog": "新增关于页面；优化闹钟时间选择、PC/手机弹窗尺寸，修复设置页滚动条引起的布局抖动。",
-          "updated_at": "2026-09-10T16:07:44Z",
+        "2.0.5": {
+          "changelog": "MiAir Plus 2.0.5 正式版。用户已确认在当前设备和环境实测，各项功能正常。\n\n- 接入飞牛统一网关，远程入口复用系统域名与 HTTPS，保留 8310 局域网访问。\n- 修复网关与应用令牌冲突、移动端来源校验及页面加载问题。\n- 适配手机底部导航、安全区域与 WebView 存储兼容。\n- 完善 NAS 原生文件选择、文件权限校验、授权回调与错误提示。\n- 保留 DLNA / AirPlay 音乐投送、音乐上传与自定义闹钟；AirPlay 2 仍为预览功能。\n\n下载 miair-plus-2.0.5-all.fpk，在飞牛应用中心使用“手动安装”升级，x86_64 / ARM64 共用此包。升级后关闭旧页面，从应用中心重新打开。NAS 文件授权能力需要 fnOS 1.2.0401+、飞牛 App 1.34.0+。\n\n验证：前端类型检查与构建、go vet、Go 测试、双架构 FPK 构建通过；GitHub Linux CI 的竞态测试、双架构编译与安装包生命周期检查全部通过；用户反馈实测正常。其他机型和环境的兼容性见仓库 docs/COMPATIBILITY.md。\n\n附件包含通用安装包、SHA256 校验文件及原生音频组件对应源码；应用源码也包含在安装包中。",
+          "updated_at": "2026-09-11T03:29:10Z",
           "os_min_version": "",
           "packages": {
             "all": {
-              "download_url": "https://github.com/BearHero520/miair-plus/releases/download/v2.0.0-alpha.7/miair-plus-2.0.0-alpha.7-all.fpk",
-              "sha256": "35533564ebccb029d22014caecba75eb8547cedbcf6924fcb6dba01d41103538",
-              "size": 25021898
+              "download_url": "https://github.com/BearHero520/miair-plus/releases/download/v2.0.5/miair-plus-2.0.5-all.fpk",
+              "sha256": "37a22d8b1f52204b539e9fcdbee27e7db91dd5e801e93cf512f1449c5572186e",
+              "size": 25121896
             }
           }
         }

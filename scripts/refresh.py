@@ -18,7 +18,7 @@ def fetch(url):
 def application(repo, tag, categories, allow_prerelease=False):
     release = json.loads(subprocess.check_output([
         'gh', 'release', 'view', tag, '--repo', 'BearHero520/' + repo,
-        '--json', 'tagName,isDraft,isPrerelease,assets,publishedAt,url'
+        '--json', 'tagName,isDraft,isPrerelease,assets,publishedAt,url,body'
     ], encoding='utf-8'))
     assert not release['isDraft'], 'Select a published release'
     assert allow_prerelease or not release['isPrerelease'], 'Select a stable release or explicitly allow the MiAir preview'
@@ -63,7 +63,7 @@ def application(repo, tag, categories, allow_prerelease=False):
         'install_type': manifest.get('install_type', ''), 'is_docker': False,
         'service_port': manifest.get('service_port', ''),
         'releases': {version: {
-            'changelog': manifest.get('changelog', ''),
+            'changelog': manifest.get('changelog') or release.get('body', '').strip(),
             'updated_at': release['publishedAt'],
             'os_min_version': manifest.get('os_min_version', ''),
             'packages': {platform: {'download_url': asset['url'], 'sha256': sha, 'size': len(data)}}
@@ -71,6 +71,8 @@ def application(repo, tag, categories, allow_prerelease=False):
     }
     if release['isPrerelease']:
         app['desc'] = '【预览版】' + app['desc']
+    if (ROOT / 'apps' / appname / 'README.md').is_file():
+        app['readme_url'] = SOURCE.replace('https://github.com/', 'https://raw.githubusercontent.com/') + '/main/apps/' + appname + '/README.md'
     assert app['run_as'] in ['root', 'package']
     assert app['install_type'] in ['', 'root']
     print(f'Validated {appname} {version}: {len(data)} bytes, SHA256 {sha}')

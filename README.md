@@ -24,11 +24,11 @@ https://raw.githubusercontent.com/BearHero520/FnDepot/main/fnpack.json
 | --- | --- | --- | --- | --- |
 | MiAir Plus | 2.0.9 | 通用（x86_64 / ARM64） | NAS 文件授权需 1.2.0401+ | [介绍与截图](apps/miair-plus/README.md) · [项目](https://github.com/BearHero520/miair-plus) |
 | UGREEN工具箱 | 2.2.0 | x86 | 0.9.27 | [LLLED_FPK](https://github.com/BearHero520/LLLED_FPK) |
-| 反向代理 | 1.0.16 | 通用（x86 / ARM） | 1.1.3100 | [fnos-reverse-proxy](https://github.com/BearHero520/fnos-reverse-proxy) |
+| 反向代理 | 1.0.18 | 通用（x86 / ARM） | 1.1.3100 | [fnos-reverse-proxy](https://github.com/BearHero520/fnos-reverse-proxy) |
 
 UGREEN 工具箱提供绿联 NAS 灯光控制、状态监测及兼容机型的风扇和电源管理，具体功能以机型检测结果为准。2.2.0 整合 DX4600 已实测控制代码，优化来电策略保存与启动恢复，修复诊断插件目录选择；DH2600 不包含在此版本中。
 
-反向代理支持 HTTP、HTTPS、WS、WSS、TCP、UDP，提供证书管理、自动签发、DDNS 和实验性系统 HTTPS 证书替换。安装前请先在飞牛应用中心安装 Node.js v22（`nodejs_v22`）。系统证书替换的实机兼容目标为 fnOS 1.2.0602，与应用基础安装版本要求不同。主包包含受限特权工作进程，无需另外安装证书部署助手；Web 和代理进程以应用用户运行，生命周期及受限工作进程需要 root。
+反向代理支持 HTTP、HTTPS、WS、WSS、TCP、UDP，提供证书管理、自动签发、DDNS 和实验性系统 HTTPS 证书替换。1.0.18 带来 iOS 18 磨砂界面、移动端适配和规则快捷启停，并修复状态标识与筛选排列，保留升级重启后的运行历史。安装前请先在飞牛应用中心安装 Node.js v22（`nodejs_v22`）。系统证书替换的实机兼容目标为 fnOS 1.2.0602，与应用基础安装版本要求不同。主包包含受限特权工作进程，无需另外安装证书部署助手；Web 和代理进程以应用用户运行，生命周期及受限工作进程需要 root。
 
 MiAir Plus 提供小爱音箱 DLNA / AirPlay 音乐投送，以及支持上传、NAS 选曲、工作日和节假日规则的音乐闹钟。2.0.9 修复 AirPlay 音量与实时流兼容问题，新增整首播放和循环 2–20 次闹钟，优化 iOS 输入体验及投送日志；AirPlay 2 仍为预览功能，现场投送效果需安装后实测。NAS 文件授权需 fnOS 1.2.0401+ 和飞牛 App 1.34.0+，具体音箱与发送端兼容性请查看项目说明。生命周期脚本需要 root，主服务以应用用户运行。
 
@@ -45,7 +45,7 @@ MiAir Plus 提供小爱音箱 DLNA / AirPlay 音乐投送，以及支持上传�
 先在原项目发布并验证目标版本，再在本仓库运行（需要 Python 3 和已登录的 GitHub CLI）：
 
 ```powershell
-python scripts/refresh.py --toolbox-tag v2.2.0 --proxy-tag v1.0.16
+python scripts/refresh.py --toolbox-tag v2.2.0 --proxy-tag v1.0.18
 python scripts/refresh.py --miair-tag v2.0.9
 ```
 

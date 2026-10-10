@@ -18,7 +18,7 @@
         "硬件驱动"
       ],
       "icon_url": "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/icons/App.Native.UGreenLED.png",
-      "readme_url": "https://raw.githubusercontent.com/BearHero520/LLLED_FPK/v2.2.0/README.md",
+      "readme_url": "https://raw.githubusercontent.com/BearHero520/LLLED_FPK/v2.2.3/README.md",
       "bug_report_url": "https://github.com/BearHero520/LLLED_FPK/issues",
       "maintainer": "BearHero520",
       "maintainer_url": "https://github.com/BearHero520/LLLED_FPK",
@@ -27,15 +27,15 @@
       "is_docker": false,
       "service_port": "5088",
       "releases": {
-        "2.2.0": {
-          "changelog": "v2.2.0 整合实测通过的 DX4600 灯控、风扇、来电启动和 WOL 控制，优化启动设置恢复与服务重复启动处理，修复诊断插件路径，清理多轮测试代码；DH2600 保留独立分支，不随本版发布",
-          "updated_at": "2026-09-19T05:19:10Z",
+        "2.2.3": {
+          "changelog": "v2.2.3 修复 DX4600 灯控频繁 busy：优先探测 I801 总线并保留 MCU 签名校验与后备扫描；合并 LED 状态读取，避免页面刷新并发争锁。保留 v2.2.2 来电启动策略修复与 DXP4800S 灯控改进；灯效实机效果待验证",
+          "updated_at": "2026-10-09T15:46:09Z",
           "os_min_version": "0.9.27",
           "packages": {
             "x86": {
-              "download_url": "https://github.com/BearHero520/LLLED_FPK/releases/download/v2.2.0/App.Native.UGreenLED-2.2.0.fpk",
-              "sha256": "8370c2c50f4e24adae2213ebbe873efae17e59f7ec852a1311cb2ad3d6ce7e11",
-              "size": 4472505
+              "download_url": "https://github.com/BearHero520/LLLED_FPK/releases/download/v2.2.3/App.Native.UGreenLED-2.2.3.fpk",
+              "sha256": "184bf4a00ee8111a7edc41be94afbadf71d031c4772154b4a3299b1d70a663af",
+              "size": 5045342
             }
           }
         }

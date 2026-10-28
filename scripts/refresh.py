@@ -90,14 +90,14 @@ def main():
     source = json.loads((ROOT / 'fnpack.json').read_text(encoding='utf-8-sig'))
     apps = source['apps']
     for repo, tag, categories, allow_preview in [
-        ('LLLED_FPK', args.toolbox_tag, ['系统工具', '硬件驱动'], False),
+        ('UGreen-Control', args.toolbox_tag, ['系统工具', '硬件驱动'], False),
         ('fnos-reverse-proxy', args.proxy_tag, ['系统工具', '编程开发'], False),
         ('miair-plus', args.miair_tag, ['影音娱乐', '智能智控'], args.allow_miair_preview)
     ]:
         if tag:
             name, app = application(repo, tag, categories, allow_preview)
             apps[name] = app
-    source['source_info']['description'] = '面向飞牛 fnOS 的 UGREEN 工具箱、反向代理与 MiAir Plus 应用。'
+    source['source_info']['description'] = '面向飞牛 fnOS 的 UGreen Control、反向代理与 MiAir Plus 应用。'
     encoded = json.dumps(source, ensure_ascii=False, indent=2) + '\n'
     assert len(encoded.encode('utf-8')) < 2 * 1024 * 1024
     (ROOT / 'fnpack.json').write_text(encoded, encoding='utf-8')

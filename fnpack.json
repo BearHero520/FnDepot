@@ -18,7 +18,7 @@
         "硬件驱动"
       ],
       "icon_url": "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/icons/App.Native.UGreenLED.png",
-      "readme_url": "https://raw.githubusercontent.com/BearHero520/UGreen-Control/v3.0.5/README.md",
+      "readme_url": "https://raw.githubusercontent.com/BearHero520/UGreen-Control/v3.0.7/README.md",
       "bug_report_url": "https://github.com/BearHero520/UGreen-Control/issues",
       "maintainer": "BearHero520",
       "maintainer_url": "https://github.com/BearHero520/UGreen-Control",
@@ -27,15 +27,15 @@
       "is_docker": false,
       "service_port": "5088",
       "releases": {
-        "3.0.5": {
-          "changelog": "v3.0.5 项目迁移为 UGreen Control，在线更新、下载和项目说明统一指向新仓库；保留 App.Native.UGreenLED 应用标识，支持现有安装升级。合并 Almighty 的 BIOS、风扇、独立 WOL/RTC 与 DXP6800 支持及界面改进；实验功能与实机验证状态以检测结果和文档为准。",
-          "updated_at": "2026-10-28T02:24:16Z",
+        "3.0.7": {
+          "changelog": "v3.0.7 修复“关于 → 项目说明”的二维码显示：支持 Markdown 图片，将相对图片路径解析为仓库原图地址；支付宝和微信打赏码直接并排展示，点击可查看原图。同步功能与用法说明，保留 UGREEN-NAS-Hardware v0.3.0 及原有硬件能力和验证状态。支持覆盖升级并保留配置。",
+          "updated_at": "2026-10-28T04:01:58Z",
           "os_min_version": "0.9.27",
           "packages": {
             "x86": {
-              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v3.0.5/App.Native.UGreenLED-3.0.5.fpk",
-              "sha256": "466477ff509375e95a482921b54783c6d4813fe6bccc2d10d17c20e37235b686",
-              "size": 3175138
+              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v3.0.7/App.Native.UGreenLED-3.0.7.fpk",
+              "sha256": "a512435fd08da0fe97bb515ff9141badc53626d1d404e6599ac4cad995308c27",
+              "size": 3503240
             }
           }
         }

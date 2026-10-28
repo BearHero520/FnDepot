@@ -23,10 +23,10 @@ https://raw.githubusercontent.com/BearHero520/FnDepot/main/fnpack.json
 | 应用 | 版本 | 架构 | 最低 fnOS | 项目 |
 | --- | --- | --- | --- | --- |
 | MiAir Plus | 2.0.9 | 通用（x86_64 / ARM64） | NAS 文件授权需 1.2.0401+ | [介绍与截图](apps/miair-plus/README.md) · [项目](https://github.com/BearHero520/miair-plus) |
-| UGreen Control | 3.0.5 | x86 | 0.9.27 | [UGreen-Control](https://github.com/BearHero520/UGreen-Control) |
+| UGreen Control | 3.0.7 | x86 | 0.9.27 | [UGreen-Control](https://github.com/BearHero520/UGreen-Control) |
 | 反向代理 | 1.0.18 | 通用（x86 / ARM） | 1.1.3100 | [fnos-reverse-proxy](https://github.com/BearHero520/fnos-reverse-proxy) |
 
-UGreen Control（原 UGREEN 工具箱）提供绿联 NAS 灯光控制、状态监测及兼容机型的风扇和电源管理，具体功能以机型检测结果为准。原 LLLED_FPK 仓库已直接更名为 UGreen-Control，保留原提交历史、Issues 与 Releases；3.0.5 的下载、反馈和应用内在线更新使用新名称对应的地址。应用标识仍为 `App.Native.UGreenLED`，支持现有安装升级。包含 Almighty 的 BIOS、风扇、独立 WOL/RTC、DXP6800 支持及界面改进；实验能力与实机验证状态以应用检测和项目文档为准。
+UGreen Control 提供绿联 NAS 灯光控制、状态监测及兼容机型的风扇、来电恢复、WOL 和 RTC 定时开机管理。v3.0.7 修复“关于 → 项目说明”的图片路径与 Markdown 图片显示，支付宝和微信打赏码直接并排展示，点击可查看原图。应用标识仍为 `App.Native.UGreenLED`，支持覆盖升级并保留配置；实验能力与实机验证状态以应用检测和项目文档为准。详见 [v3.0.7 更新说明](https://github.com/BearHero520/UGreen-Control/releases/tag/v3.0.7)。
 
 反向代理支持 HTTP、HTTPS、WS、WSS、TCP、UDP，提供证书管理、自动签发、DDNS 和实验性系统 HTTPS 证书替换。1.0.18 带来 iOS 18 磨砂界面、移动端适配和规则快捷启停，并修复状态标识与筛选排列，保留升级重启后的运行历史。安装前请先在飞牛应用中心安装 Node.js v22（`nodejs_v22`）。系统证书替换的实机兼容目标为 fnOS 1.2.0602，与应用基础安装版本要求不同。主包包含受限特权工作进程，无需另外安装证书部署助手；Web 和代理进程以应用用户运行，生命周期及受限工作进程需要 root。
 
@@ -45,7 +45,7 @@ MiAir Plus 提供小爱音箱 DLNA / AirPlay 音乐投送，以及支持上传�
 先在原项目发布并验证目标版本，再在本仓库运行（需要 Python 3 和已登录的 GitHub CLI）：
 
 ```powershell
-python scripts/refresh.py --toolbox-tag v3.0.5 --proxy-tag v1.0.18
+python scripts/refresh.py --toolbox-tag v3.0.7 --proxy-tag v1.0.18
 python scripts/refresh.py --miair-tag v2.0.9
 ```
 

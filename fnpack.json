@@ -29,7 +29,7 @@
       "releases": {
         "3.0.5": {
           "changelog": "v3.0.5 项目迁移为 UGreen Control，在线更新、下载和项目说明统一指向新仓库；保留 App.Native.UGreenLED 应用标识，支持现有安装升级。合并 Almighty 的 BIOS、风扇、独立 WOL/RTC 与 DXP6800 支持及界面改进；实验功能与实机验证状态以检测结果和文档为准。",
-          "updated_at": "2026-10-28T02:24:08Z",
+          "updated_at": "2026-10-28T02:51:12Z",
           "os_min_version": "0.9.27",
           "packages": {
             "x86": {

@@ -54,3 +54,15 @@ python scripts/refresh.py --miair-tag v2.0.9
 应用详情页维护在 `apps/<appname>/README.md`；存在此文件时，刷新脚本会将 `readme_url` 指向本仓库详情页，保留截图展示入口。截图按应用版本存放在 `assets/screenshots/`。
 
 本仓库只维护应用源索引和展示资源，原项目源码和授权条款请查看上方项目链接。FnDepot 的公开源列表由其维护者的扫描流程生成；手动添加本源无需等待该列表更新。
+
+## 支持作者
+
+如果这个应用源对你有帮助，欢迎点一颗 ⭐ **Star**，让更多人发现它。
+愿意的话，也可以请作者喝杯咖啡，为应用源整理、适配测试和后续维护添一点动力。
+打赏完全自愿，量力随心；你的使用、反馈和分享，同样是很好的支持。谢谢你！
+
+| 支付宝 | 微信支付 |
+| --- | --- |
+| ![支付宝自愿打赏二维码](https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/donate/alipay.jpg) | ![微信支付自愿打赏二维码](https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/donate/wechat.png) |
+
+点击图片可查看原图。

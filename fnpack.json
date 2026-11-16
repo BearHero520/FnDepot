@@ -18,7 +18,7 @@
         "硬件驱动"
       ],
       "icon_url": "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/icons/App.Native.UGreenLED.png",
-      "readme_url": "https://raw.githubusercontent.com/BearHero520/UGreen-Control/v3.0.9/README.md",
+      "readme_url": "https://raw.githubusercontent.com/BearHero520/UGreen-Control/v3.2.0/README.md",
       "bug_report_url": "https://github.com/BearHero520/UGreen-Control/issues",
       "maintainer": "BearHero520",
       "maintainer_url": "https://github.com/BearHero520/UGreen-Control",
@@ -27,15 +27,15 @@
       "is_docker": false,
       "service_port": "5088",
       "releases": {
-        "3.0.9": {
-          "changelog": "v3.0.9 新增 DXP8800 Pro CPU 风扇调速、两路系统风扇联动、三路转速读取及来电恢复，接入独立软件温控曲线（参数来自 1.17 原厂配置）；修复 LED 操作并发与失败后的缓存处理，增加硬件写入失败退避，修正 DXP8800 系列型号显示。保留精确机型检查、写入确认、并发锁和回读保护。构建及软件测试通过，目标 NAS 实机验证待补。",
-          "updated_at": "2026-11-05T02:55:01Z",
+        "3.2.0": {
+          "changelog": "v3.2.0 新增 iDX6012 八灯控制与六盘位映射、双风扇调速、自定义温控、来电开关和 WOL。接入 DXP4800 GT 手动调速、八点自动温控和实验性来电开关，改进 LED 总线发现、U.2/M.2 盘位识别和故障诊断。保存固定转速与 WOL 设置，应用启动时恢复。GT 控制及关机唤醒仍需目标 NAS 验证。",
+          "updated_at": "2026-11-16T06:10:13Z",
           "os_min_version": "0.9.27",
           "packages": {
             "x86": {
-              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v3.0.9/App.Native.UGreenLED-3.0.9.fpk",
-              "sha256": "c5e91b8acf2a05d969d88a5b44dd81926625f45dd50fec90c3f715ccc7db018e",
-              "size": 3573618
+              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v3.2.0/App.Native.UGreenLED-3.2.0.fpk",
+              "sha256": "30004b0fd079268c6fc4f02ad62baa354d54f8cde95bd36510ab9ee006549f8d",
+              "size": 3275379
             }
           }
         }

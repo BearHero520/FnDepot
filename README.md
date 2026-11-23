@@ -23,10 +23,10 @@ https://raw.githubusercontent.com/BearHero520/FnDepot/main/fnpack.json
 | 应用 | 版本 | 架构 | 最低 fnOS | 项目 |
 | --- | --- | --- | --- | --- |
 | MiAir Plus | 2.0.9 | 通用（x86_64 / ARM64） | NAS 文件授权需 1.2.0401+ | [介绍与截图](apps/miair-plus/README.md) · [项目](https://github.com/BearHero520/miair-plus) |
-| UGreen Control | 3.2.6 | x86 | 0.9.27 | [UGreen-Control](https://github.com/BearHero520/UGreen-Control) |
+| UGreen Control | 3.2.7 | x86 | 0.9.27 | [UGreen-Control](https://github.com/BearHero520/UGreen-Control) |
 | 反向代理 | 1.0.18 | 通用（x86 / ARM） | 1.1.3100 | [fnos-reverse-proxy](https://github.com/BearHero520/fnos-reverse-proxy) |
 
-UGreen Control 3.2.6 增加 DH2600 机型识别、N76 直控和官方盘位灯位映射，隐藏没有实体网络指示灯机型的网络灯设置与活动提示，并在缺少 N76 驱动时停止无效探测刷屏。应用标识为 `App.Native.UGreenLED`，适用于 x86 飞牛。实机验证状态见 [v3.2.6 更新说明](https://github.com/BearHero520/UGreen-Control/releases/tag/v3.2.6)。
+UGreen Control 3.2.7 统一通过随包 UGREEN-NAS-Hardware 程序执行硬件操作，自动盘位映射调用上游 `ugreenctl disk map --tsv`，保留 DH2600 N76 直控并隐藏没有实体网络指示灯机型的网络灯设置与活动提示。应用标识为 `App.Native.UGreenLED`，适用于 x86 飞牛。更新说明见 [v3.2.7 更新说明](https://github.com/BearHero520/UGreen-Control/releases/tag/v3.2.7)。
 
 反向代理支持 HTTP、HTTPS、WS、WSS、TCP、UDP，提供证书管理、自动签发、DDNS 和实验性系统 HTTPS 证书替换。1.0.18 带来 iOS 18 磨砂界面、移动端适配和规则快捷启停，并修复状态标识与筛选排列，保留升级重启后的运行历史。安装前请先在飞牛应用中心安装 Node.js v22（`nodejs_v22`）。系统证书替换的实机兼容目标为 fnOS 1.2.0602，与应用基础安装版本要求不同。主包包含受限特权工作进程，无需另外安装证书部署助手；Web 和代理进程以应用用户运行，生命周期及受限工作进程需要 root。
 
@@ -45,7 +45,7 @@ MiAir Plus 提供小爱音箱 DLNA / AirPlay 音乐投送，以及支持上传�
 先在原项目发布并验证目标版本，再在本仓库运行（需要 Python 3 和已登录的 GitHub CLI）：
 
 ```powershell
-python scripts/refresh.py --toolbox-tag v3.2.6 --proxy-tag v1.0.18
+python scripts/refresh.py --toolbox-tag v3.2.7 --proxy-tag v1.0.18
 python scripts/refresh.py --miair-tag v2.0.9
 ```
 

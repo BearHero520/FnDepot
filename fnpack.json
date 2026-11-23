@@ -18,7 +18,7 @@
         "硬件驱动"
       ],
       "icon_url": "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/icons/App.Native.UGreenLED.png",
-      "readme_url": "https://raw.githubusercontent.com/BearHero520/UGreen-Control/v3.2.6/README.md",
+      "readme_url": "https://raw.githubusercontent.com/BearHero520/UGreen-Control/v3.2.7/README.md",
       "bug_report_url": "https://github.com/BearHero520/UGreen-Control/issues",
       "maintainer": "BearHero520",
       "maintainer_url": "https://github.com/BearHero520/UGreen-Control",
@@ -27,15 +27,15 @@
       "is_docker": false,
       "service_port": "5088",
       "releases": {
-        "3.2.6": {
-          "changelog": "v3.2.6 按机型能力隐藏 DH2600 的网络指示灯设置和网络灯活动提示，并在设备页明确显示该机型没有实体网络指示灯。",
-          "updated_at": "2026-11-23T10:52:59Z",
+        "3.2.7": {
+          "changelog": "v3.2.7 统一通过随包 UGREEN-NAS-Hardware 程序执行硬件操作，移除应用层本地盘位推断与驱动加载，并保留 DH2600 N76 直控和无驱动静默退避。",
+          "updated_at": "2026-11-23T11:19:55Z",
           "os_min_version": "0.9.27",
           "packages": {
             "x86": {
-              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v3.2.6/App.Native.UGreenLED-3.2.6.fpk",
-              "sha256": "9a3cbb041ab13d6aa51dbc270cbe966c06e304f79e486c662595530e8cc148bc",
-              "size": 3760039
+              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v3.2.7/App.Native.UGreenLED-3.2.7.fpk",
+              "sha256": "f54225a3763d3a2ce3a60734395f9a5dee8cd9b188383998f63c9b48cd9e3fd5",
+              "size": 3759342
             }
           }
         }

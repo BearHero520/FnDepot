@@ -18,7 +18,7 @@
         "硬件驱动"
       ],
       "icon_url": "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/icons/App.Native.UGreenLED.png",
-      "readme_url": "https://raw.githubusercontent.com/BearHero520/UGreen-Control/v3.2.7/README.md",
+      "readme_url": "https://raw.githubusercontent.com/BearHero520/UGreen-Control/v3.2.0/README.md",
       "bug_report_url": "https://github.com/BearHero520/UGreen-Control/issues",
       "maintainer": "BearHero520",
       "maintainer_url": "https://github.com/BearHero520/UGreen-Control",
@@ -27,15 +27,15 @@
       "is_docker": false,
       "service_port": "5088",
       "releases": {
-        "3.2.7": {
-          "changelog": "v3.2.7 统一通过随包 UGREEN-NAS-Hardware 程序执行硬件操作，移除应用层本地盘位推断与驱动加载，并保留 DH2600 N76 直控和无驱动静默退避。",
-          "updated_at": "2026-11-23T11:19:55Z",
+        "3.2.0": {
+          "changelog": "# UGreen Control v3.2.0\n\n- iDX6012 增加电源、网络和六个盘位的灯光控制、跑马灯接管，以及双风扇同步调速、设备智能模式、自定义温控、兼容温控预设、来电开关和 WOL。已有指定主板的灯光、调速和设置回读实测。实际断电恢复与关机唤醒待验证。\n- DXP4800 GT 支持 CPU 和系统风扇独立调速、八点自动温控及实验性来电开关。改进 LED 多总线识别、U.2／M.2 物理盘位映射和 EC 占用诊断。风扇、灯光和断电恢复仍需在目标 fnOS NAS 上复测。\n- 固定 PWM 和 WOL 设置按机型保存，应用启动时恢复。WOL 和 RTC 的可用机型取自上游目录，设置结果以设备回读为准。\n- BIOS 和风扇使用 UGREEN-NAS-Hardware 0.4.0 的 x86_64 构建。灯控继续使用应用附带的 ugreen_leds_cli。\n\n适用平台为 x86 飞牛 fnOS 0.9.27 及以上，应用标识为 App.Native.UGreenLED。可用同名 SHA-256 文件校验版本化 FPK。\n\n## 感谢\n\n感谢 QQ 用户 `281****28`、`324*****03`、`867***03`、`110*****32` 提供帮助并参与测试。\n感谢 `**可 *荣` 的赞助。",
+          "updated_at": "2026-11-16T06:10:13Z",
           "os_min_version": "0.9.27",
           "packages": {
             "x86": {
-              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v3.2.7/App.Native.UGreenLED-3.2.7.fpk",
-              "sha256": "f54225a3763d3a2ce3a60734395f9a5dee8cd9b188383998f63c9b48cd9e3fd5",
-              "size": 3759342
+              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v3.2.0/App.Native.UGreenLED-3.2.0.fpk",
+              "sha256": "30004b0fd079268c6fc4f02ad62baa354d54f8cde95bd36510ab9ee006549f8d",
+              "size": 3275379
             }
           }
         }

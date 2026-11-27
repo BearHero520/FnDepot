@@ -18,7 +18,7 @@
         "硬件驱动"
       ],
       "icon_url": "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/icons/App.Native.UGreenLED.png",
-      "readme_url": "https://raw.githubusercontent.com/BearHero520/UGreen-Control/v3.2.0/README.md",
+      "readme_url": "https://raw.githubusercontent.com/BearHero520/FnDepot/main/apps/App.Native.UGreenLED/README.md",
       "bug_report_url": "https://github.com/BearHero520/UGreen-Control/issues",
       "maintainer": "BearHero520",
       "maintainer_url": "https://github.com/BearHero520/UGreen-Control",
@@ -27,6 +27,18 @@
       "is_docker": false,
       "service_port": "5088",
       "releases": {
+        "3.2.9": {
+          "changelog": "v3.2.9 修复 DXP8800 系列根端口桥识别、DXP2800 EM26 与 iDX6011/6012 OEM V3.0 等机型物理盘位映射；增强 LED MCU I2C 锁等待、ACK 轮询、写入回读重试及 DX4600/DXP4800S 多总线探测；修复重映射失败时覆盖已有盘位映射与机型配置归一问题。",
+          "updated_at": "2026-11-27T06:24:12Z",
+          "os_min_version": "0.9.27",
+          "packages": {
+            "x86": {
+              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v3.2.9/App.Native.UGreenLED-3.2.9.fpk",
+              "sha256": "a9d7c03125cc1f510c3ebb24576b076a07e6ad1c5f775279a888faf9ad50bc23",
+              "size": 12684826
+            }
+          }
+        },
         "3.2.0": {
           "changelog": "# UGreen Control v3.2.0\n\n- iDX6012 增加电源、网络和六个盘位的灯光控制、跑马灯接管，以及双风扇同步调速、设备智能模式、自定义温控、兼容温控预设、来电开关和 WOL。已有指定主板的灯光、调速和设置回读实测。实际断电恢复与关机唤醒待验证。\n- DXP4800 GT 支持 CPU 和系统风扇独立调速、八点自动温控及实验性来电开关。改进 LED 多总线识别、U.2／M.2 物理盘位映射和 EC 占用诊断。风扇、灯光和断电恢复仍需在目标 fnOS NAS 上复测。\n- 固定 PWM 和 WOL 设置按机型保存，应用启动时恢复。WOL 和 RTC 的可用机型取自上游目录，设置结果以设备回读为准。\n- BIOS 和风扇使用 UGREEN-NAS-Hardware 0.4.0 的 x86_64 构建。灯控继续使用应用附带的 ugreen_leds_cli。\n\n适用平台为 x86 飞牛 fnOS 0.9.27 及以上，应用标识为 App.Native.UGreenLED。可用同名 SHA-256 文件校验版本化 FPK。\n\n## 感谢\n\n感谢 QQ 用户 `281****28`、`324*****03`、`867***03`、`110*****32` 提供帮助并参与测试。\n感谢 `**可 *荣` 的赞助。",
           "updated_at": "2026-11-16T06:10:13Z",
@@ -38,8 +50,100 @@
               "size": 3275379
             }
           }
+        },
+        "3.0.9": {
+          "changelog": "# UGreen Control v3.0.9\n\nDXP8800 Pro 现在可以独立调节 CPU 风扇、联动调节两路系统风扇并分别查看三路转速。来电恢复支持开机、关机和恢复断电前状态。自动温控采用 DXP8800 专属软件曲线，参数取自 1.17 原厂配置。写入需要精确型号匹配和确认。模拟硬件测试已通过，实机散热和断电恢复仍待验证。[固件证据](https://github.com/BearHero520/UGREEN-NAS-Hardware/blob/abfe71a07e5b10e79d78bc637dfec14eba514de0/docs/DXP8800_PRO_AUDIT.zh-CN.md)\n\nLED 操作现在串行执行。部分写入失败时清除对应缓存，硬件报错后暂停重试十秒，避免并发请求反复写入。此次也包含 DXP2800 EM26 的机型适配，并修正 DXP8800 系列的型号显示。\n\n适用平台为 x86 飞牛 fnOS 0.9.27 及以上。下载版本化 FPK，可用同名 SHA-256 文件校验。",
+          "updated_at": "2026-11-05T02:55:01Z",
+          "os_min_version": "0.9.27",
+          "packages": {
+            "x86": {
+              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v3.0.9/App.Native.UGreenLED-3.0.9.fpk",
+              "sha256": "c5e91b8acf2a05d969d88a5b44dd81926625f45dd50fec90c3f715ccc7db018e",
+              "size": 3573618
+            }
+          }
+        },
+        "3.0.7": {
+          "changelog": "# UGreen Control v3.0.7\n\n本版本修复“关于 → 项目说明”中的二维码显示。升级后，支付宝和微信打赏码直接并排展示，\n不再显示为 HTML 标签文字，点击图片可查看原图。\n\n- 项目说明阅读器支持 Markdown 图片，同时正确处理仓库相对路径和完整图片地址。\n- README 使用原生 Markdown 图片与完整原图地址，取消二维码折叠。\n- 同步以功能、安装和用法为主的项目说明，保留自愿 Star 与打赏说明。\n\n继续使用固定的 UGREEN-NAS-Hardware v0.3.0 硬件包，保留各机型原有能力和实验性标注。\n本次更新未新增 NAS 实机写入或关机唤醒验证。\n\n## 安装与升级\n\n下载 `App.Native.UGreenLED-3.0.7.fpk` 或同内容的 `App.Native.UGreenLED.fpk`，\n在 fnOS 应用中心选择手动安装。应用标识仍为 `App.Native.UGreenLED`，支持覆盖升级并保留配置。\n`App.Native.UGreenLED-3.0.7.fpk.sha256` 对应带版本号安装包。\n\n二维码阅读器修复随安装包更新；已有用户需要升级应用，单独刷新 README 不会更新阅读器。",
+          "updated_at": "2026-10-28T04:01:58Z",
+          "os_min_version": "0.9.27",
+          "packages": {
+            "x86": {
+              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v3.0.7/App.Native.UGreenLED-3.0.7.fpk",
+              "sha256": "a512435fd08da0fe97bb515ff9141badc53626d1d404e6599ac4cad995308c27",
+              "size": 3503240
+            }
+          }
+        },
+        "3.0.6": {
+          "changelog": "# UGreen Control v3.0.6\n\n本版本正式发布，同步使用 [UGREEN-NAS-Hardware v0.3.0](https://github.com/BearHero520/UGREEN-NAS-Hardware/releases/tag/v0.3.0)\n的新硬件包，保留 `App.Native.UGreenLED` 应用标识，支持在 fnOS 应用中心覆盖升级并保留配置。\n\n- 整体更新四个 Linux x86_64 硬件程序及十个机型插件，来源统一为上游 `main` 提交\n  `754fdfb29badb045d5a214fbf687fc167f8cb86f`。\n- 固定发布标签、源码子模块、归档和 manifest SHA-256，导入时验证逐文件载荷与源码提交。\n- 保留独立 WOL/RTC、物理网口选择、DXP6800 三路风扇遥测、自定义曲线和 Pro 参数兼容预设。\n- 同步最新上游说明与验证日志，移除先前局部扩展的源码快照，避免混用不同构建来源。\n\n正式硬件包的能力状态仍标记 `experimental-incomplete`；应用正式发布不代表全部机型\n已完成实机验证。DXP6800 原厂温控曲线仍未知，兼容预设采用 Pro 参数。本次没有新增\nNAS 寄存器写入、实际关机唤醒或逐 BIOS 兼容性验证。\n\n下载 `App.Native.UGreenLED-3.0.6.fpk` 或同内容的 `App.Native.UGreenLED.fpk`，\n通过 fnOS 应用中心手动安装。`App.Native.UGreenLED-3.0.6.fpk.sha256` 对应带版本号安装包。",
+          "updated_at": "2026-10-28T03:37:46Z",
+          "os_min_version": "0.9.27",
+          "packages": {
+            "x86": {
+              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v3.0.6/App.Native.UGreenLED-3.0.6.fpk",
+              "sha256": "f3ea33a44ac3583d0e9608097cf2bcd23af2f635c308590c8ec7232700552ae9",
+              "size": 3135261
+            }
+          }
+        },
+        "3.0.5": {
+          "changelog": "# UGreen Control v3.0.5\n\n项目由 LLLED_FPK 迁移至 [UGreen-Control](https://github.com/BearHero520/UGreen-Control)，新项目默认分支为 `main`。LLLED_FPK 的 `almighty` 合入 `main` 后同步发布此迁移版本；配套 UGREEN-NAS-Hardware 的 `Almighty` 也合入其 `main`。\n\n- 在线更新、下载链接和应用内项目说明统一指向 [UGreen-Control Releases](https://github.com/BearHero520/UGreen-Control/releases/latest) 及新仓库 README。\n- 保留 `App.Native.UGreenLED` 应用标识，可在 fnOS 应用中心覆盖升级并保留配置。\n- 包含 Almighty 现有 BIOS、风扇、独立 WOL/RTC、DXP6800 支持及界面改进；硬件实现继续由 UGREEN-NAS-Hardware 提供，LED 请求统一通过包内 CLI。\n- DXP6800 原厂曲线仍未知，兼容预设使用 Pro 参数。本版本未新增 NAS 实机写入或关机唤醒验证；各机型限制以应用检测及硬件文档为准。\n\n下载 `App.Native.UGreenLED.fpk` 或带版本号的同内容文件，通过 fnOS 应用中心手动安装。SHA-256 文件对应带版本号的 FPK。",
+          "updated_at": "2026-10-28T02:24:16Z",
+          "os_min_version": "0.9.27",
+          "packages": {
+            "x86": {
+              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v3.0.5/App.Native.UGreenLED-3.0.5.fpk",
+              "sha256": "466477ff509375e95a482921b54783c6d4813fe6bccc2d10d17c20e37235b686",
+              "size": 3175138
+            }
+          }
+        },
+        "2.2.3": {
+          "changelog": "DX4600 在页面刷新和后台智能灯效同时运行时，可能出现 `LED controller busy`，导致状态读取或灯效更新失败。2.2.3 减少重复总线探测与并发请求。\n\n- DX4600、DX4600+、DX4600 Pro 优先探测 I801 总线，保留 MCU 签名校验、失败后的后备扫描及 CLI 互斥锁。\n- 一次 CLI 调用读取各灯状态，保留各机型灯位映射与 DXP480T 独立控制路径。\n- 页面状态刷新去重，等待整轮请求结束后再刷新；增加 30 秒超时恢复。\n- 包含来电启动策略显示为未知时的重新设置修复，以及 DXP4800S MCU 签名校验和总线重试改进。\n\n验证：DX4600 模拟总线与回退测试、DXP4800S 模拟测试、LED 批量读取及映射、API 日志、480T 回归检查、前端类型检查和 3 项并发测试均通过。安装包结构与校验和已验证。DX4600 本次修复及 DXP4800S 改进仍需实机确认。\n\n安装：在 fnOS 应用中心手动安装 `App.Native.UGreenLED-2.2.3.fpk` 或同内容的 `App.Native.UGreenLED.fpk`。最低 fnOS 版本为 0.9.27，平台为 x86。\n\nSHA256：`184bf4a00ee8111a7edc41be94afbadf71d031c4772154b4a3299b1d70a663af`",
+          "updated_at": "2026-10-09T15:46:09Z",
+          "os_min_version": "0.9.27",
+          "packages": {
+            "x86": {
+              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v2.2.3/App.Native.UGreenLED-2.2.3.fpk",
+              "sha256": "184bf4a00ee8111a7edc41be94afbadf71d031c4772154b4a3299b1d70a663af",
+              "size": 5045342
+            }
+          }
+        },
+        "2.2.0": {
+          "changelog": "本版整合 DX4600 已实测通过的控制代码，清理多轮测试实现。\n\n- 保留 DX4600 灯光颜色与开关、风扇、来电启动和 WOL 控制。\n- 优化来电策略保存及服务启动时恢复，避免重复启动服务时重复应用硬件设置。\n- 修复硬件诊断的随包插件目录选择，增加打包时的机型插件检查。\n- DH2600 保留独立开发分支，不包含在本版本中。\n\n安装包由本地主分支构建；版本、包结构、SHA-256、内置控制程序及模型插件校验通过。安装时选择任一 .fpk 文件即可，两个文件内容相同。\n\nSHA-256：`8370c2c50f4e24adae2213ebbe873efae17e59f7ec852a1311cb2ad3d6ce7e11`",
+          "updated_at": "2026-09-19T05:19:10Z",
+          "os_min_version": "0.9.27",
+          "packages": {
+            "x86": {
+              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v2.2.0/App.Native.UGreenLED-2.2.0.fpk",
+              "sha256": "8370c2c50f4e24adae2213ebbe873efae17e59f7ec852a1311cb2ad3d6ce7e11",
+              "size": 4472505
+            }
+          }
+        },
+        "2.1.0": {
+          "changelog": "v2.1.0 更名为 UGREEN工具箱，新增关于页面与新版图标，优化应用介绍、BIOS 风扇参数配置及 DX4600 系列电源管理",
+          "updated_at": "2026-08-27T11:14:03Z",
+          "os_min_version": "0.9.27",
+          "packages": {
+            "x86": {
+              "download_url": "https://github.com/BearHero520/UGreen-Control/releases/download/v2.1.0/App.Native.UGreenLED-2.1.0.fpk",
+              "sha256": "00781481f7187c9fe30133d26fc3b26bb52c2bedae9cebe5529022500c8f7a2c",
+              "size": 3043273
+            }
+          }
         }
-      }
+      },
+      "preview_urls": [
+        "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/screenshots/ugreen-control/2.2.3/01-overview.jpg",
+        "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/screenshots/ugreen-control/2.2.3/03-lighting.jpg",
+        "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/screenshots/ugreen-control/2.2.3/04-mapping.jpg",
+        "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/screenshots/ugreen-control/2.2.3/05-bios.jpg",
+        "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/screenshots/ugreen-control/2.2.3/06-fan.jpg",
+        "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/screenshots/ugreen-control/2.2.3/07-power.jpg"
+      ]
     },
     "reverse-proxy": {
       "display_name": "反向代理",
@@ -52,7 +156,7 @@
         "编程开发"
       ],
       "icon_url": "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/icons/reverse-proxy.png",
-      "readme_url": "https://raw.githubusercontent.com/BearHero520/fnos-reverse-proxy/v1.0.18/README.md",
+      "readme_url": "https://raw.githubusercontent.com/BearHero520/FnDepot/main/apps/reverse-proxy/README.md",
       "bug_report_url": "https://github.com/BearHero520/fnos-reverse-proxy/issues",
       "maintainer": "BearHero",
       "maintainer_url": "https://github.com/BearHero520/fnos-reverse-proxy",
@@ -70,6 +174,42 @@
               "download_url": "https://github.com/BearHero520/fnos-reverse-proxy/releases/download/v1.0.18/reverse-proxy.fpk",
               "sha256": "6875fce8175f263793cc340140ca27201bccadaca48eb78442939fb1dbdcb5b7",
               "size": 98032617
+            }
+          }
+        },
+        "1.0.16": {
+          "changelog": "## 反向代理 1.0.16\n\n本次发布将当前 main 分支版本提供为飞牛 fnOS 安装包，并加入 BearHero FnDepot 应用源。\n\n相较于已发布的 1.0.4，包含证书自动签发与轮换、Cloudflare / 阿里云 / 腾讯云 DDNS、规则内证书选择与导入，以及集成在“域名与证书”中的实验性系统 HTTPS 替换。1.0.16 优化系统 HTTPS 证书卡片的间距、信息层级及窄屏布局。\n\n- 支持 x86 / ARM，最低 fnOS 1.1.3100；请先安装 Node.js v22（nodejs_v22）。\n- 系统 HTTPS 替换的实机兼容目标为 fnOS 1.2.0602；使用前需预检和手动确认。\n- 受限部署工作进程已包含在主包，无需安装独立助手；Web 和代理进程以应用用户运行。\n- 验证：前端生产构建、158 项自动化测试，以及打包脚本的包内版本、文件内容和权限检查。未在本次发布流程中进行 NAS 实机安装验证。\n\n下载 reverse-proxy.fpk；安装前可使用 reverse-proxy.fpk.sha256 核对 SHA256。",
+          "updated_at": "2026-09-09T07:03:08Z",
+          "os_min_version": "1.1.3100",
+          "packages": {
+            "all": {
+              "download_url": "https://github.com/BearHero520/fnos-reverse-proxy/releases/download/v1.0.16/reverse-proxy.fpk",
+              "sha256": "d4cacffc6102d4498a37e64fe6f392445318e319a1e9a7205bcb8bb06db7e86c",
+              "size": 98027575
+            }
+          }
+        },
+        "1.0.4": {
+          "changelog": "- 规则操作菜单改为视口感知浮层，自动避让窗口边缘与移动端底部导航\n- 修复启用 / 停用开关被通用按钮样式挤压变形\n- 保留点击外部和 Escape 关闭行为\n\n安装包：reverse-proxy.fpk",
+          "updated_at": "2026-09-04T14:58:20Z",
+          "os_min_version": "1.1.3100",
+          "packages": {
+            "all": {
+              "download_url": "https://github.com/BearHero520/fnos-reverse-proxy/releases/download/v1.0.4/reverse-proxy.fpk",
+              "sha256": "3a38bef5eec5b4a732113d9d2e47a2cc88351cc3a54f761f784db81ee9f6888c",
+              "size": 2004805
+            }
+          }
+        },
+        "1.0.3": {
+          "changelog": "- 精简代理规则页，移除大状态卡与新建规则的模式选择\n- 修复三点操作菜单点击外部不关闭的问题\n- 新增自动亮色 / 暗色磨砂主题与关于页面\n- 更换直观的反向代理应用图标\n- 保留 HTTP、HTTPS、WebSocket、WSS、TCP、UDP 多协议与端口映射能力\n\n安装包：reverse-proxy.fpk",
+          "updated_at": "2026-09-04T12:11:26Z",
+          "os_min_version": "1.1.3100",
+          "packages": {
+            "all": {
+              "download_url": "https://github.com/BearHero520/fnos-reverse-proxy/releases/download/v1.0.3/reverse-proxy.fpk",
+              "sha256": "a9d66b7e438c662f1c79b8168d00296dc3cba46a3b7668b3e31fc9b54b6a004c",
+              "size": 1986999
             }
           }
         }
@@ -106,8 +246,51 @@
               "size": 25177184
             }
           }
+        },
+        "2.0.8": {
+          "changelog": "## 更新内容\r\n\r\n- 设置页支持自定义 AirPlay 2 TCP 端口，默认 7000，范围 1024–65535。\r\n- 修复 Shairport Sync 5.5.1 将用户设置的端口覆盖回 7000，导致“未在 TCP 指定端口就绪”的问题。\r\n- 修改端口后自动重建接收连接；支持配置持久化、备份恢复和旧配置兼容。\r\n- 明确使用 AirPlay 2 模式，原生组件启动信息进入应用日志。\r\n\r\n## 安装与升级\r\n\r\n下载 `miair-plus-2.0.8-all.fpk`，适用于 x86_64 和 ARM64 飞牛 NAS。升级保留已有设置；启用 AirPlay 2 后，可在设置页填写 7014 等空闲端口，保存后重新连接投送。防火墙需放行所选 TCP 端口。时间同步仍需 UDP 319/320。\r\n\r\n## 验证\r\n\r\n两个架构均在 Debian 12 普通用户环境中验证：预先占用 TCP 7000，自定义 TCP 17001 的 RTSP 响应、Bonjour 广播端口和退出清理通过。Go 测试、静态检查、前端类型检查与构建通过。手机到小爱音箱的实际音频投送仍需实机验收。\r\n\r\n- [双架构原生组件构建与测试](https://github.com/BearHero520/miair-plus/actions/runs/34568357160)\r\n- [Go 与前端检查](https://github.com/BearHero520/miair-plus/actions/runs/34568356622)\r\n\r\n附带 SHA-256 校验文件和原生组件对应源码。源码归档中的 `sources/shairport-sync-custom-port.patch` 为本版本使用的端口修复补丁。",
+          "updated_at": "2026-09-11T06:15:24Z",
+          "os_min_version": "",
+          "packages": {
+            "all": {
+              "download_url": "https://github.com/BearHero520/miair-plus/releases/download/v2.0.8/miair-plus-2.0.8-all.fpk",
+              "sha256": "adf5be048bd22c5bf2f1d87a04553396f4835e0739ea8f1408f268c9e4486c21",
+              "size": 25147761
+            }
+          }
+        },
+        "2.0.6": {
+          "changelog": "MiAir Plus 2.0.6 正式版。\n\n- 新增自动检测更新：打开管理界面时及使用期间每小时检测 GitHub 正式版本，也可在“设置”或“关于”页手动检测并查看更新说明。\n- 新增配置导入与导出：备份应用设置、音箱偏好和闹钟规则；不导出账号凭据和音乐文件。导入前确认并完整校验，失败时保留原配置。\n- 修复新建和编辑闹钟时“响铃时间”与“重复规则”的标签、输入框对齐。\n- 兼容旧版配置：从旧版本升级后默认开启自动检测更新，同时保留用户之后手动关闭的选择。\n\n下载 `miair-plus-2.0.6-all.fpk`，在飞牛应用中心使用“手动安装”升级，x86_64 / ARM64 共用此包。导入配置后，闹钟会保持关闭，请检查音箱、重新选择铃声并保存后再启用。\n\n验证：前端类型检查与生产构建、完整 Go 测试、双架构 FPK 构建通过；已检查安装包清单、校验和、x86_64 / ARM64 可执行文件、原生音频组件及对应源码。桌面和手机宽度页面均已检查。\n\nSHA256：`4d8b5d9cad20411b5b66a9f4b2592ca7322c43b5d1bf909196bc80e85ed7139a`",
+          "updated_at": "2026-09-11T03:50:09Z",
+          "os_min_version": "",
+          "packages": {
+            "all": {
+              "download_url": "https://github.com/BearHero520/miair-plus/releases/download/v2.0.6/miair-plus-2.0.6-all.fpk",
+              "sha256": "4d8b5d9cad20411b5b66a9f4b2592ca7322c43b5d1bf909196bc80e85ed7139a",
+              "size": 25148464
+            }
+          }
+        },
+        "2.0.5": {
+          "changelog": "MiAir Plus 2.0.5 正式版。用户已确认在当前设备和环境实测，各项功能正常。\n\n- 接入飞牛统一网关，远程入口复用系统域名与 HTTPS，保留 8310 局域网访问。\n- 修复网关与应用令牌冲突、移动端来源校验及页面加载问题。\n- 适配手机底部导航、安全区域与 WebView 存储兼容。\n- 完善 NAS 原生文件选择、文件权限校验、授权回调与错误提示。\n- 保留 DLNA / AirPlay 音乐投送、音乐上传与自定义闹钟；AirPlay 2 仍为预览功能。\n\n下载 miair-plus-2.0.5-all.fpk，在飞牛应用中心使用“手动安装”升级，x86_64 / ARM64 共用此包。升级后关闭旧页面，从应用中心重新打开。NAS 文件授权能力需要 fnOS 1.2.0401+、飞牛 App 1.34.0+。\n\n验证：前端类型检查与构建、go vet、Go 测试、双架构 FPK 构建通过；GitHub Linux CI 的竞态测试、双架构编译与安装包生命周期检查全部通过；用户反馈实测正常。其他机型和环境的兼容性见仓库 docs/COMPATIBILITY.md。\n\n附件包含通用安装包、SHA256 校验文件及原生音频组件对应源码；应用源码也包含在安装包中。",
+          "updated_at": "2026-09-11T03:29:10Z",
+          "os_min_version": "",
+          "packages": {
+            "all": {
+              "download_url": "https://github.com/BearHero520/miair-plus/releases/download/v2.0.5/miair-plus-2.0.5-all.fpk",
+              "sha256": "37a22d8b1f52204b539e9fcdbee27e7db91dd5e801e93cf512f1449c5572186e",
+              "size": 25121896
+            }
+          }
         }
-      }
+      },
+      "preview_urls": [
+        "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/screenshots/miair-plus/2.0.5/dashboard.png",
+        "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/screenshots/miair-plus/2.0.5/devices.png",
+        "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/screenshots/miair-plus/2.0.5/alarms.png",
+        "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/screenshots/miair-plus/2.0.5/settings.png",
+        "https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/screenshots/miair-plus/2.0.5/about.png"
+      ]
     }
   }
 }

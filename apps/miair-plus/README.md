@@ -28,6 +28,17 @@
 
 2.0.9 已通过自动测试、模拟音频链路验证，以及 Go、前端、双架构构建与安装脚本检查；AirPlay 是否解决现场无声仍需安装后实测，其他音箱与发送端需分别验证。**AirPlay 2 仍为预览功能**，不支持屏幕镜像、视频接收，不保证多房间精确同步。详见[兼容说明](https://github.com/BearHero520/miair-plus/blob/main/docs/COMPATIBILITY.md)。
 
+## 更新历史
+
+| 版本 | 日期 | 主要更新 |
+| --- | --- | --- |
+| [2.0.9](https://github.com/BearHero520/miair-plus/releases/tag/v2.0.9) | 2026-09-14 | 修复 AirPlay 音量与实时流兼容问题，新增整首播放和循环 2–20 次闹钟，增加投送排查日志。 |
+| [2.0.8](https://github.com/BearHero520/miair-plus/releases/tag/v2.0.8) | 2026-09-11 | 支持自定义 AirPlay 2 TCP 端口，修复端口配置被覆盖的问题。 |
+| [2.0.6](https://github.com/BearHero520/miair-plus/releases/tag/v2.0.6) | 2026-09-11 | 增加自动更新检测、配置导入导出和旧配置兼容。 |
+| [2.0.5](https://github.com/BearHero520/miair-plus/releases/tag/v2.0.5) | 2026-09-11 | 接入飞牛统一网关，修复移动端适配和 NAS 原生文件选择。 |
+
+完整的版本、安装包大小和 SHA256 已同步到源索引的 `releases` 字段。
+
 ## 手机实机截图
 
 以下保留 2.0.5 在手机飞牛 App 中的实机截图，2.0.9 的新增功能与界面以实际安装为准。

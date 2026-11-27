@@ -15,7 +15,7 @@ def fetch(url):
     with urllib.request.urlopen(url, timeout=90) as response:
         return response.read()
 
-def application(repo, tag, categories, allow_prerelease=False):
+def application(repo, tag, categories, existing_apps, allow_prerelease=False):
     release = json.loads(subprocess.check_output([
         'gh', 'release', 'view', tag, '--repo', 'BearHero520/' + repo,
         '--json', 'tagName,isDraft,isPrerelease,assets,publishedAt,url,body'
@@ -52,6 +52,17 @@ def application(repo, tag, categories, allow_prerelease=False):
     icon_path.parent.mkdir(parents=True, exist_ok=True)
     icon_path.write_bytes(icon)
     homepage = 'https://github.com/BearHero520/' + repo
+    previous = existing_apps.get(appname, {})
+    new_release = {
+        'changelog': manifest.get('changelog') or release.get('body', '').strip(),
+        'updated_at': release['publishedAt'],
+        'os_min_version': manifest.get('os_min_version', ''),
+        'packages': {platform: {'download_url': asset['url'], 'sha256': sha, 'size': len(data)}}
+    }
+    releases = {version: new_release}
+    for k, v in previous.get('releases', {}).items():
+        if k != version:
+            releases[k] = v
     app = {
         'display_name': manifest['display_name'], 'desc': manifest['desc'],
         'platform': [platform], 'categories': categories,
@@ -62,13 +73,10 @@ def application(repo, tag, categories, allow_prerelease=False):
         'run_as': privilege['defaults']['run-as'],
         'install_type': manifest.get('install_type', ''), 'is_docker': False,
         'service_port': manifest.get('service_port', ''),
-        'releases': {version: {
-            'changelog': manifest.get('changelog') or release.get('body', '').strip(),
-            'updated_at': release['publishedAt'],
-            'os_min_version': manifest.get('os_min_version', ''),
-            'packages': {platform: {'download_url': asset['url'], 'sha256': sha, 'size': len(data)}}
-        }}
+        'releases': releases
     }
+    if previous.get('preview_urls'):
+        app['preview_urls'] = previous['preview_urls']
     if release['isPrerelease']:
         app['desc'] = '【预览版】' + app['desc']
     if (ROOT / 'apps' / appname / 'README.md').is_file():
@@ -95,7 +103,7 @@ def main():
         ('miair-plus', args.miair_tag, ['影音娱乐', '智能智控'], args.allow_miair_preview)
     ]:
         if tag:
-            name, app = application(repo, tag, categories, allow_preview)
+            name, app = application(repo, tag, categories, apps, allow_preview)
             apps[name] = app
     source['source_info']['description'] = '面向飞牛 fnOS 的 UGreen Control、反向代理与 MiAir Plus 应用。'
     encoded = json.dumps(source, ensure_ascii=False, indent=2) + '\n'

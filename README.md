@@ -22,13 +22,13 @@ https://raw.githubusercontent.com/BearHero520/FnDepot/main/fnpack.json
 
 | 应用 | 版本 | 架构 | 最低 fnOS | 项目 |
 | --- | --- | --- | --- | --- |
-| MiAir Plus | 2.0.9 | 通用（x86_64 / ARM64） | NAS 文件授权需 1.2.0401+ | [介绍与截图](apps/miair-plus/README.md) · [项目](https://github.com/BearHero520/miair-plus) |
-| UGreen Control | 3.2.7 | x86 | 0.9.27 | [UGreen-Control](https://github.com/BearHero520/UGreen-Control) |
-| 反向代理 | 1.0.18 | 通用（x86 / ARM） | 1.1.3100 | [fnos-reverse-proxy](https://github.com/BearHero520/fnos-reverse-proxy) |
+| MiAir Plus | 2.0.9 | 通用（x86_64 / ARM64） | NAS 文件授权需 1.2.0401+ | [介绍、历史与截图](apps/miair-plus/README.md) · [项目](https://github.com/BearHero520/miair-plus) |
+| UGreen Control | 3.2.9 | x86 | 0.9.27 | [介绍、历史与截图](apps/App.Native.UGreenLED/README.md) · [项目](https://github.com/BearHero520/UGreen-Control) |
+| 反向代理 | 1.0.18 | 通用（x86 / ARM） | 1.1.3100 | [介绍与历史](apps/reverse-proxy/README.md) · [项目](https://github.com/BearHero520/fnos-reverse-proxy) |
 
-UGreen Control 3.2.7 统一通过随包 UGREEN-NAS-Hardware 程序执行硬件操作，自动盘位映射调用上游 `ugreenctl disk map --tsv`，保留 DH2600 N76 直控并隐藏没有实体网络指示灯机型的网络灯设置与活动提示。应用标识为 `App.Native.UGreenLED`，适用于 x86 飞牛。更新说明见 [v3.2.7 更新说明](https://github.com/BearHero520/UGreen-Control/releases/tag/v3.2.7)。
+UGreen Control 3.2.9 修复 DXP8800 系列根端口桥识别、DXP2800 EM26 与 iDX6011/6012 OEM V3.0 等机型物理盘位映射，增强 LED MCU I2C 锁等待、ACK 轮询、写入回读重试及 DX4600/DXP4800S 多总线探测，并修复重映射失败时覆盖已有盘位映射与机型配置归一问题。应用标识为 `App.Native.UGreenLED`，适用于 x86 飞牛。完整的历史版本与界面截图见 [应用详情](apps/App.Native.UGreenLED/README.md)。
 
-反向代理支持 HTTP、HTTPS、WS、WSS、TCP、UDP，提供证书管理、自动签发、DDNS 和实验性系统 HTTPS 证书替换。1.0.18 带来 iOS 18 磨砂界面、移动端适配和规则快捷启停，并修复状态标识与筛选排列，保留升级重启后的运行历史。安装前请先在飞牛应用中心安装 Node.js v22（`nodejs_v22`）。系统证书替换的实机兼容目标为 fnOS 1.2.0602，与应用基础安装版本要求不同。主包包含受限特权工作进程，无需另外安装证书部署助手；Web 和代理进程以应用用户运行，生命周期及受限工作进程需要 root。
+反向代理支持 HTTP、HTTPS、WS、WSS、TCP、UDP，提供证书管理、自动签发、DDNS 和实验性系统 HTTPS 证书替换。1.0.18 带来 iOS 18 磨砂界面、移动端适配和规则快捷启停，并修复状态标识与筛选排列，保留升级重启后的运行历史。安装前请先在飞牛应用中心安装 Node.js v22（`nodejs_v22`）。系统证书替换的实机兼容目标为 fnOS 1.2.0602，与应用基础安装版本要求不同。主包包含受限特权工作进程，无需另外安装证书部署助手；Web 和代理进程以应用用户运行，生命周期及受限工作进程需要 root。完整版本记录见[应用详情](apps/reverse-proxy/README.md)。
 
 MiAir Plus 提供小爱音箱 DLNA / AirPlay 音乐投送，以及支持上传、NAS 选曲、工作日和节假日规则的音乐闹钟。2.0.9 修复 AirPlay 音量与实时流兼容问题，新增整首播放和循环 2–20 次闹钟，优化 iOS 输入体验及投送日志；AirPlay 2 仍为预览功能，现场投送效果需安装后实测。NAS 文件授权需 fnOS 1.2.0401+ 和飞牛 App 1.34.0+，具体音箱与发送端兼容性请查看项目说明。生命周期脚本需要 root，主服务以应用用户运行。
 
@@ -36,7 +36,7 @@ MiAir Plus 提供小爱音箱 DLNA / AirPlay 音乐投送，以及支持上传�
 
 <img src="https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/screenshots/miair-plus/2.0.5/dashboard.png" width="280" alt="MiAir Plus 手机总览"> <img src="https://raw.githubusercontent.com/BearHero520/FnDepot/main/assets/screenshots/miair-plus/2.0.5/alarms.png" width="280" alt="MiAir Plus 手机音乐闹钟">
 
-[查看全部五张截图与更新说明](apps/miair-plus/README.md)
+[查看全部五张截图、更新历史与版本说明](apps/miair-plus/README.md)
 
 安装包直接来自各项目的版本 Release；索引记录真实 FPK 的版本、权限、架构、大小及 SHA256。图标从同一版本安装包提取。
 
@@ -45,11 +45,11 @@ MiAir Plus 提供小爱音箱 DLNA / AirPlay 音乐投送，以及支持上传�
 先在原项目发布并验证目标版本，再在本仓库运行（需要 Python 3 和已登录的 GitHub CLI）：
 
 ```powershell
-python scripts/refresh.py --toolbox-tag v3.2.7 --proxy-tag v1.0.18
+python scripts/refresh.py --toolbox-tag v3.2.9 --proxy-tag v1.0.18
 python scripts/refresh.py --miair-tag v2.0.9
 ```
 
-脚本只更新指定应用并保留其他条目；MiAir 预览版需显式传入 `--allow-miair-preview`。脚本下载并在内存中检查 FPK，验证 GitHub SHA256、独立校验文件、大小及包内 manifest，更新 `fnpack.json` 和图标。核对变更后再提交推送；脚本不会发布原项目版本。升级时同步修改本 README 的版本表与命令。
+脚本只更新指定应用并保留其他条目，也会保留该应用已有的 `releases` 和 `preview_urls`；MiAir 预览版需显式传入 `--allow-miair-preview`。脚本下载并在内存中检查 FPK，验证 GitHub SHA256、独立校验文件、大小及包内 manifest，更新 `fnpack.json` 和图标。核对变更后再提交推送；脚本不会发布原项目版本。升级时同步修改本 README 的版本表与命令。
 
 应用详情页维护在 `apps/<appname>/README.md`；存在此文件时，刷新脚本会将 `readme_url` 指向本仓库详情页，保留截图展示入口。截图按应用版本存放在 `assets/screenshots/`。
 
